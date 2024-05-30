@@ -41,4 +41,7 @@ npm install sheperd.js
 python app.py
 ```
 
+## License
+
+This application is licensed under [MIT License](/LICENSE).
 
