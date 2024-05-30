@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Language Detector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/css/shepherd.css">
+</head>
+<body>
+    <div id="collect-images-btn">Collect Images</div>
+    <div id="create-dataset-btn">Create Dataset</div>
+    <div id="train-classifier-btn">Train Classifier</div>
+    <div id="inference-btn">Inference</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/js/shepherd.js"></script>
+    <script src="{{ url_for('static', filename='app-tour.js') }}"></script>
+
+<script>
+document.getElementById('collect-images-btn').addEventListener('click', function() {
+    fetch('/collect-images', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => console.log(data.message));
+});
+
+document.getElementById('create-dataset-btn').addEventListener('click', function() {
+    fetch('/create-dataset', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => console.log(data.message));
+});
+
+document.getElementById('train-classifier-btn').addEventListener('click', function() {
+    fetch('/train-classifier', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => console.log(data.message));
+});
+
+document.getElementById('inference-btn').addEventListener('click', function() {
+    fetch('/inference', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => console.log(data.message));
+});
+</script>
+</body>
+</html>
