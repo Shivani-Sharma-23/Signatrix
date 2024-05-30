@@ -1,5 +1,5 @@
 # HAND SIGN DETECTOR APP
-The Hand Sign Language Detector app bridges communication gaps by converting sign language into text using advanced computer vision and machine learning techniques. The app captures, processes, and interprets hand gestures, facilitating seamless interaction between sign language users and non-signers. An integrated interactive tour using Shepherd.js guides users through the app's features, ensuring an intuitive and smooth user experience.
+The Hand Sign Language Detector app bridges communication gaps by converting sign language into text using advanced computer vision and machine learning techniques. The app captures, processes, and interprets hand gestures, facilitating seamless interaction between sign language users and non-signers. An integrated interactive tour using `Shepherd.js` guides users through the app's features, ensuring an intuitive and smooth user experience.
 
 ![Screenshot 2024-05-30 205037](https://github.com/Shivani-Sharma-23/Sign_to_Text_converter/assets/112687652/21ce68c6-4667-45ce-98aa-2743f207c6c8)
 ![Screenshot 2024-05-30 204942](https://github.com/Shivani-Sharma-23/Sign_to_Text_converter/assets/112687652/a70de093-2084-4ef0-89d6-9f6697b97396)
@@ -22,8 +22,8 @@ https://github.com/Shivani-Sharma-23/Sign_to_Text_converter/assets/112687652/c22
 - Clone the Repository:
 
 ```bash
-git clone https://github.com/computervisioneng/sign-language-detector-python.git
-cd sign-language-detector-python
+git clone https://github.com/Shivani-Sharma-23/Hand_Sign_to_Text_converter.git
+cd Hand_Sign_to_Text_converter
 ```
 
 - Install Dependencies:
