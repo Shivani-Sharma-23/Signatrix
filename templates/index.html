@@ -1,43 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Sign Language Detector</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/css/shepherd.css">
+    <style>
+        body {
+            background-color: rgb(44, 42, 42);
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #tagline-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #5f7249;
+            padding: 30px;
+            margin-top: 20px;
+            font-size: 40px;
+
+        }
+
+        #tagline-bar img {
+            margin-right: 100px;
+            width: 500px;
+            height: 600px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .button {
+            background-color: rgb(230, 226, 197);
+            color: black;
+            padding: 35px 60px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 26px;
+        }
+
+        .button:hover {
+            background-color: #b6faff;
+        }
+    </style>
 </head>
+
 <body>
-    <div id="collect-images-btn">Collect Images</div>
-    <div id="create-dataset-btn">Create Dataset</div>
-    <div id="train-classifier-btn">Train Classifier</div>
-    <div id="inference-btn">Inference</div>
+    <header>
+        <h1>SIGN LANGUAGE DETECTOR</h1>
+    </header>
+    </br></br>
+
+    <div id="tagline-bar">
+        <img src="intro.png"
+            alt="Image 1">
+        <h1>"Empowering communication through <br>seamless sign language detection."</h1>
+    </div>
+
+    </br></br>
+    <div class="button-container">
+        <div id="collect-images-btn" class="button">Collect Images</div>
+        <div id="create-dataset-btn" class="button">Create Dataset</div>
+        <div id="train-classifier-btn" class="button">Train Classifier</div>
+        <div id="inference-btn" class="button">Inference</div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/js/shepherd.js"></script>
     <script src="{{ url_for('static', filename='app-tour.js') }}"></script>
 
-<script>
-document.getElementById('collect-images-btn').addEventListener('click', function() {
-    fetch('/collect-images', { method: 'POST' })
-        .then(response => response.json())
-        .then(data => console.log(data.message));
-});
 
-document.getElementById('create-dataset-btn').addEventListener('click', function() {
-    fetch('/create-dataset', { method: 'POST' })
-        .then(response => response.json())
-        .then(data => console.log(data.message));
-});
+    <script>
+        document.getElementById('collect-images-btn').addEventListener('click', function () {
+            fetch('/collect-images', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => console.log(data.message));
+        });
 
-document.getElementById('train-classifier-btn').addEventListener('click', function() {
-    fetch('/train-classifier', { method: 'POST' })
-        .then(response => response.json())
-        .then(data => console.log(data.message));
-});
+        document.getElementById('create-dataset-btn').addEventListener('click', function () {
+            fetch('/create-dataset', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => console.log(data.message));
+        });
 
-document.getElementById('inference-btn').addEventListener('click', function() {
-    fetch('/inference', { method: 'POST' })
-        .then(response => response.json())
-        .then(data => console.log(data.message));
-});
-</script>
+        document.getElementById('train-classifier-btn').addEventListener('click', function () {
+            fetch('/train-classifier', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => console.log(data.message));
+        });
+
+        document.getElementById('inference-btn').addEventListener('click', function () {
+            fetch('/inference', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => console.log(data.message));
+        });
+    </script>
 </body>
+
 </html>
