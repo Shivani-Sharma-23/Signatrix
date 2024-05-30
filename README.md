@@ -18,3 +18,27 @@ https://github.com/Shivani-Sharma-23/Sign_to_Text_converter/assets/112687652/13d
 
 https://github.com/Shivani-Sharma-23/Sign_to_Text_converter/assets/112687652/c22fb841-1e07-40eb-b4c0-807efdfef9e9
 
+## Installation
+- Clone the Repository:
+
+```bash
+git clone https://github.com/computervisioneng/sign-language-detector-python.git
+cd sign-language-detector-python
+```
+
+- Install Dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+```bash
+npm install sheperd.js
+```
+
+- Run the Flask Application:
+
+```bash
+python app.py
+```
+
+
