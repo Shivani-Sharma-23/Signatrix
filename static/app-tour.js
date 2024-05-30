@@ -11,18 +11,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tour.addStep({
         id: 'welcome',
-        text: 'Welcome to the Sign Language Detector App! Let us guide you through the main features.',
+        text: 'Welcome to the Sign Language Detector App 👋! Let us guide you through the main features.',
         buttons: [
             {
                 text: 'Next',
                 action: tour.next
             }
-        ]
+        ],
+        classes: 'custom-shepherd-step'
     });
 
     tour.addStep({
         id: 'collect-images',
-        text: 'Use this section to collect images for training the sign language detector.',
+        text: 'Use this section to collect images for training the sign language detector.📷',
         attachTo: {
             element: '#collect-images-btn',
             on: 'right'
@@ -36,12 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Next',
                 action: tour.next
             }
-        ]
+        ],
+        classes: 'custom-shepherd-step'
     });
 
     tour.addStep({
         id: 'create-dataset',
-        text: 'Create a dataset from the collected images here.',
+        text: 'Create a dataset from the collected images here.⚙️',
         attachTo: {
             element: '#create-dataset-btn',
             on: 'right'
@@ -55,12 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Next',
                 action: tour.next
             }
-        ]
+        ],
+        classes: 'custom-shepherd-step'
     });
 
     tour.addStep({
         id: 'train-classifier',
-        text: 'Train the classifier using the dataset created.',
+        text: 'Train the classifier using the dataset created.🧠',
         attachTo: {
             element: '#train-classifier-btn',
             on: 'right'
@@ -74,12 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Next',
                 action: tour.next
             }
-        ]
+        ],
+        classes: 'custom-shepherd-step'
     });
 
     tour.addStep({
         id: 'inference',
-        text: 'Use this section to perform inference with the trained classifier.',
+        text: 'Use this section to detect hand sign with the trained classifier.👉☝️✌️🤙',
         attachTo: {
             element: '#inference-btn',
             on: 'right'
@@ -93,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Finish',
                 action: tour.complete
             }
-        ]
+        ],
+        classes: 'custom-shepherd-step'
     });
 
     // Start the tour

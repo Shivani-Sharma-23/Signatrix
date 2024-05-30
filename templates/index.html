@@ -5,77 +5,153 @@
     <meta charset="UTF-8">
     <title>Sign Language Detector</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/css/shepherd.css">
+
+
     <style>
         body {
-            background-color: rgb(44, 42, 42);
+            background-color: rgb(15, 14, 14);
         }
 
-        header {
-            background-color: black;
-            color: white;
+        #page-header {
+            background-color: rgb(1, 1, 1);
+            color: rgb(108, 224, 236);
             padding: 10px;
-            text-align: center;
+            font-size: 25px;
+            font-family: 'Copperplate', Fantasy;
         }
 
         #tagline-bar {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: #5f7249;
-            padding: 30px;
-            margin-top: 20px;
-            font-size: 40px;
-
-        }
-
-        #tagline-bar img {
-            margin-right: 100px;
-            width: 500px;
+            justify-content: center;
+            background-image: url("https://miro.medium.com/v2/resize:fit:675/1*cwukaTJPlp5GFd8twISZqQ.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             height: 600px;
+            width: 100%;
+            padding: 50px;
+            font-size: 30px;
+            text-align: center;
+            box-shadow: 100px 100px 100px rgba(0, 0, 0, 0.8);
         }
+
+        #tagline-bar h1 {
+            color: rgb(255, 255, 255);
+            opacity: 1;
+        }
+
+        #tagline-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+
 
         .button-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
             gap: 50px;
+            height: 400px;
+        }
+
+        .button-text {
+            color: white;
+            font-size: 25px;
+            display: inline-block;
+            margin-left: 20px;
+            font-family:Roboto, sans-serif;
         }
 
         .button {
-            background-color: rgb(230, 226, 197);
-            color: black;
-            padding: 35px 60px;
+            background-color: rgb(15, 14, 14);
+            color: rgb(108, 224, 236);
+            padding: 50px 50px;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
+            height: 80px;
+            width: 200px;
             cursor: pointer;
-            font-size: 26px;
+            font-weight: bolder;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-left: 600px;
+            margin-right: 80px;
+            box-shadow: 5px 5px 10px rgb(108, 224, 236);
+            text-align: center;
         }
 
         .button:hover {
             background-color: #b6faff;
         }
+
+        .custom-shepherd-step .shepherd-content {
+            background-color: white;
+            color:black;
+            font-weight: bold;
+            font-size: 20px;
+            border: 5px;
+            border-color: black ;
+            box-shadow: 5px 5px 10px rgb(108, 224, 236);
+        }
+
+
+        .custom-shepherd-step .shepherd-button {
+            background-color: rgb(108, 224, 236);
+            color: black;
+        }
+
+        .custom-shepherd-step .shepherd-button:hover {
+            background-color: rgb(66, 62, 62);
+        }
     </style>
 </head>
 
+
 <body>
-    <header>
-        <h1>SIGN LANGUAGE DETECTOR</h1>
+    <header id="page-header">
+        <h3>SIGN LANGUAGE DETECTOR</h3>
     </header>
-    </br></br>
 
     <div id="tagline-bar">
-        <img src="intro.png"
-            alt="Image 1">
-        <h1>"Empowering communication through <br>seamless sign language detection."</h1>
+        <h1>"Empowering communication through seamless sign language detection."</h1>
+    </div>
+    <hr style="height:10px;border-width:0;color:rgb(52, 49, 49);background-color:rgb(52, 49, 49)">
+
+    <div class="button-container">
+        <div class="button-text"><h1>Capture your sign </br>language data now!</h1></div>
+        <div id="collect-images-btn" class="button">Collect Images</div>
+    </div>
+    <hr style="height:10px;border-width:0;color:rgb(52, 49, 49);background-color:rgb(52, 49, 49)">
+
+    <div class="button-container">
+        <div class="button-text"><h1>Transform captured</br>images into a dataset.</h1></div>
+        <div id="create-dataset-btn" class="button">Create Dataset</div>
+    </div>
+    <hr style="height:10px;border-width:0;color:rgb(52, 49, 49);background-color:rgb(52, 49, 49)">
+
+    <div class="button-container">
+        <div class="button-text"><h1>Build your sign language</br>model with training.</h1></div>
+        <div id="train-classifier-btn" class="button">Train Classifier</div>
+    </div>
+    <hr style="height:10px;border-width:0;color:rgb(52, 49, 49);background-color:rgb(52, 49, 49)">
+
+    <div class="button-container">
+        <div class="button-text"><h1>Run your model to</br> recognize signs instantly.</h1></div>
+        <div id="inference-btn" class="button">Detect Sign</div>
     </div>
 
-    </br></br>
-    <div class="button-container">
-        <div id="collect-images-btn" class="button">Collect Images</div>
-        <div id="create-dataset-btn" class="button">Create Dataset</div>
-        <div id="train-classifier-btn" class="button">Train Classifier</div>
-        <div id="inference-btn" class="button">Inference</div>
-    </div>
+
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shepherd.js/8.0.0/js/shepherd.js"></script>
     <script src="{{ url_for('static', filename='app-tour.js') }}"></script>
